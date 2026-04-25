@@ -12,7 +12,7 @@ jobs:
         run: git clone https://github.com/satywanbhalekar/Github-Actions.git
       - name:  cd into code and run docker build
         run: cd Github-Actions && docker build -t mynewimage:latest .
-      -name: login to docker hub
+      - name: login to docker hub
         run: docker login -u satywan -p ${{ secrets.DOCKER_HUB_PASSWORD }}
       - name: tag and push the image
         run: docker tag mynewimage:latest satywan/mynewimage:latest && docker push satywan/mynewimage:v1
