@@ -15,7 +15,7 @@ jobs:
       - name: login to docker hub
         run: docker login -u satywan -p ${{ secrets.DOCKER_HUB_PASSWORD }}
       - name: tag and push the image
-        run: docker tag mynewimage:latest satywan/mynewimage:latest && docker push satywan/mynewimage:v1
+        run: docker tag mynewimage:latest satywan/mynewimage:v1 && docker push satywan/mynewimage:v1
 
 
 
